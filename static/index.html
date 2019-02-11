@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="app" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Ambiente de treinamento">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coding Training</title>
+  <!-- <link rel="icon" href="./favicon.png" /> -->
+  <link rel="stylesheet" href="bower_comp/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/app.css">
+  <link rel="stylesheet" href="resources/libs/css/font-awesome.min.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  -->
+  <script src="resources/libs/codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="resources/libs/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="resources/libs/codemirror/theme/material.css">
+  <script src="resources/libs/codemirror/mode/javascript/javascript.js"></script>
+  <script src="resources/libs/js/formating.js"></script>
+  <script src="resources/libs/js/highcharts.js"></script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121375222-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121375222-1');
+  </script>
+
+  
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <ui-view></ui-view>
+
+      <!-- Bibliotecas de uso geral  -->
+
+
+      <script src="bower_comp/jquery/dist/jquery.min.js"></script> 
+      <script src="bower_comp/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="bower_comp/lodash/dist/lodash.min.js"></script>
+      <script src="bower_comp/moment/min/moment-with-locales.min.js"></script>
+      <script src="bower_comp/numeral/min/numeral.min.js"></script>
+      <script src="bower_comp/numeral/min/locales/pt-br.min.js"></script>
+      <script src="bower_comp/scriptjs/dist/script.min.js"></script>
+      
+
+      <!-- Bibliotecas do Angular - BOWER  -->
+      <script src="bower_comp/angular/angular.min.js"></script>
+      <script src="bower_comp/angular-ui-router/release/angular-ui-router.min.js"></script>
+      <script src="bower_comp/angular-permission/dist/angular-permission.min.js"></script>
+      <script src="bower_comp/angular-permission/dist/angular-permission-ui.min.js"></script>
+
+
+      <!-- Bibliotecas do Angular - NPM  -->
+      <script src="node_mod/angular-ui-router-styles/ui-router-styles.js"></script>
+      <script src="node_mod/angular-local-storage/dist/angular-local-storage.min.js"></script>
+      
+
+      <script src="app/app.js"></script>
+      <script src="app/components/constants/constants.js"></script>
+      <script src="app/views/_views.js"></script>
+
+      <!-- Services -->
+      <script src="app/components/services/_services.js"></script>
+      <script src="app/components/services/loadDynamic.js"></script>
+
+
+
+      <script src="app/views/main/main.route.js"></script>
+      <script src="app/views/view1/view1.route.js"></script>
+      <script src="app/views/view2/view2.route.js"></script>
+      <script src="app/views/listar/listar.route.js"></script>
+      <script src="app/views/inserir/inserir.route.js"></script>
+      <script src="app/views/atualizar/atualizar.route.js"></script>
+      <script src="app/views/exercicios/exercicios.route.js"></script>
+      <script src="app/views/inserirExercicios/inserirExercicios.route.js"></script>
+      <script src="app/views/home/home.route.js"></script>
+      <script src="app/views/responder/responder.route.js"></script>
+      <script src="app/views/listarRespostas/listarRespostas.route.js"></script>
+      <script src="app/views/login/login.route.js"></script>
+      <script src="app/views/register/register.route.js"></script>
+      <script src="app/views/ranking/ranking.route.js"></script>
+      <script src="app/views/contato/contato.route.js"></script>
+      <script src="app/views/cadastroManual/cadastroManual.route.js"></script>
+
+
+
+
+
+    </script>
+  </body>
+
+  </html>

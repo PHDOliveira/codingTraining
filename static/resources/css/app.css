@@ -1,0 +1,67 @@
+html{height:100%;font-size:16px}body{font-family:"Open Sans",calibri,Arial;font-size:16px;line-height:25px;color:#000;min-height:100%;overflow-x:hidden}*{outline:0}.barra-topo{background-color:#000;color:#fff;position:relative;height:30px}.barra-topo h3{color:#fff}.barra-topo .link-topo{color:#fff!important}.barra-topo .link-topo:hover{color:#000!important;background-color:#fff!important}.barra-topo .logo{margin-right:50px;margin-left:15px;line-height:0;padding:0}.barra-topo .logo h3{margin-top:10px;margin-bottom:10px}.barra-topo .logo a{text-decoration:none;padding:0}.conteudo{margin-top:50px}.conteudo-principal{min-height:900px}ul.alinhar-direita{right:0;position:absolute;margin-right:15px}ul.alinhar-direita li{height:100%;position:relative;display:inline-block;margin-top:13px;cursor:pointer}ul.alinhar-direita li+li{margin-left:15px}footer.footer{background:#000;color:#fff;font-size:13px;margin-top:25px;padding:0 20px}@media only screen and (max-width:768px){body{background:#fff}}
+span.beta {
+    /* margin: -1px; */
+    top: 30px;
+    position: absolute;
+    font-weight: 700;
+    left: 145px;
+    font-size: 13px;
+    transform: rotate(-15deg);
+}
+
+.barra-nova {
+    background: black;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+nav.navbar.navbar-default.barra-nova a{
+
+    color: white;
+}
+
+
+
+
+nav.navbar.navbar-default.barra-nova a:hover{
+
+    color: black;
+    background: white;
+}
+
+/*navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	
+    background: black;
+    }*/
+
+    .logo-novo {
+        min-width: 180px;
+        font-weight: 700;
+    }
+    .logo-novo:hover{
+     color: white !important;
+     background: black !important;
+ }
+
+
+ .navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #fff;
+}
+
+
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+
+.navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{
+    background-color: #000;
+}
+

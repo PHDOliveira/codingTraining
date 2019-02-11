@@ -1,0 +1,18 @@
+<h1>Ambiente de Treinamento em Javascript</h1>
+
+<p>Este é um ambiente desenvolvido para treinamento em na linguagem Javascript.</p>
+<p>Registre-se e começe a praticar a solução questões imediatamente!</p>
+
+
+<ul ng-if="logado">
+	<li ><a href="#" ui-sref="app.exercicios">Lista de Exercícios</a></li>
+	<li ><a href="#" ui-sref="app.contato">Contato</a></li>
+
+	
+</ul>
+
+<ul  ng-if="!logado">
+	<li ><a href="#" ui-sref="app.register">Registrar-se</a></li>
+	<li ><a href="#" ui-sref="app.login">Login</a></li>
+	
+</ul>

@@ -1,0 +1,13 @@
+<p>This is the partial for view 1.</p>
+
+<h1>Listar</h1>
+
+<div ng-repeat="dado in dados">
+	<hr>
+	<div> <b>ID: </b> <span ng-bind="dado._id"></span> </div>
+	<div> <b>Nome: </b> <span ng-bind="dado.name"></span> </div>
+	<div> <b>Capital: </b><span ng-bind="dado.capital"></span> </div>
+	<div> <button ui-sref="app.atualizar({dadoAtualizar: dado})"><i class="fa fa-edit"></i></button></div>
+	<div> <button ng-click="deletar(dado._id)"><i class="fa fa-trash"></i></button></div>
+
+</div>

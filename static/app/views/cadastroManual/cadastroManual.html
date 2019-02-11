@@ -1,0 +1,64 @@
+<h1>Cadastrar-se</h1>
+
+<form name="registro" action="">
+
+	<div class="form-group">
+		<label for="nome">Nome Completo</label>
+		<input type="text" class="form-control"  required id="nome" ng-model="obj.nome">
+	</div>
+
+	<div class="form-group">
+		<label for="email">Login</label>
+		<input type="email" class="form-control"  required id="email" ng-model="obj.email">
+	</div>
+
+	<label for="senha">Senha</label>
+	<input type="password" class="form-control" required id="senha" ng-model="obj.senha" pattern=".{3,}" title="3 characters minimum">
+
+	<label for="senha2">Confirmar senha</label>
+	<input type="password" class="form-control" required id="senha2" ng-model="obj.senha2" ng-class="{'invalid':msgSenha}" pattern=".{3,}" title="3 characters minimum">
+	<div class="msg-senha" ng-if="msgSenha" ng-bind="msgSenha"></div>
+
+	<div class="form-group">
+		<label for="permissoes">Permissoes</label>
+		<input type="text" class="form-control"  required id="permissoes" ng-model="obj.permissoes">
+	</div>
+
+	<div class="checkbox">
+		<label for="concordo"> <input type="checkbox"  required id="concordo" ng-model="obj.concordo"> Li e concordo com o 	<a href="" ng-click="toogleTermos()"> termos de uso</a> </label>
+		
+	</div>
+
+</div>
+<div class="form-group termos" ng-if="mostrarTermos">
+		<div>
+			<h3>Termos de uso</h3>
+		</div>
+		
+		<div>
+			I - Os dados coletados como soluções, tempo de resposta, quantidade de tentativas, entre outros poderão ser utilizados para melhorar  experiência de uso da plataforma. 
+		</div>
+		<div>
+			II - Esses dados poderão ser utilizados para eventuais comparações com propósito acadêmico. 
+		</div>
+		<div>
+			III - Em hipótese alguma os usuários serão identificados. 
+		</div>
+
+</div>
+<div class="form-group">
+
+
+<button  ng-click="cadastrarse(obj)" class="btn btn-success btn-logar" > Cadastrar-se </button>
+</div>
+
+<div class="msg">
+	<div class="msg" ng-if="msgSucces"> <span class="msg-succes">Você foi cadastrado com sucesso!</span></div>
+	<div class="msg" ng-if="msgError"> 
+		<div>Ocorreu um erro, tente novamente!</div>
+		<div class="msg-error">Erro: <span ng-bind="msgError"> </span></div>
+
+	</div>
+</div>
+</form>
+

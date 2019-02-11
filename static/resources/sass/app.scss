@@ -1,0 +1,125 @@
+
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Open Sans", "calibri","Arial";
+  font-size: 16px;
+  line-height: 25px;
+  color: #000;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+*{
+  outline: 0px;
+}
+
+.barra-topo{
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  height: 30px;
+  h3{
+    color: #fff;
+  }
+  .link-topo {
+    color: #fff !important;
+    &:hover{
+      color: #000 !important;
+      background-color: #fff !important; 
+    }
+  }
+  .logo{
+    margin-right: 50px;
+    margin-left: 15px;
+    line-height: 0px;
+    padding: 0;
+    h3{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+      padding: 0;
+    }
+
+  }
+}
+.conteudo {
+  margin-top: 50px;
+}
+
+.conteudo-principal{
+  min-height: 900px;
+}
+
+ul{
+  &.alinhar-direita {
+    right: 0px;
+    position: absolute;
+    margin-right: 15px;
+
+    li {
+      /* background: red; */
+      height: 100%;
+      position: relative;
+      display: inline-block;
+      margin-top: 13px;
+      cursor: pointer;
+
+      & + li {
+        margin-left: 15px;
+      }
+    }
+  }
+
+
+
+}
+
+
+footer.footer {
+  background: black;
+  color: white;
+  font-size: 13px;
+  margin-top: 25px;
+  padding: 0px 20px;
+}
+
+/* Tablet */
+@media only screen and (max-width: 992px) {
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  body {
+    background: #fff;
+  }
+
+}
+
+
+/* Smarthphone */
+
+@media only screen and (max-width: 480px) {
+
+
+
+}
+
+
+span.beta {
+    /* margin: -1px; */
+    top: 40px;
+    position: absolute;
+    font-weight: 700;
+    left: 150px;
+    font-size: 13px;
+    transform: rotate(-15deg);
+}

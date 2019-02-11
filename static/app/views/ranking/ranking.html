@@ -1,0 +1,19 @@
+
+<div class="row">
+	<h1>Ranking</h1>
+	
+	
+
+	<div class="col-md-12 dado" ng-repeat="dado in dados">
+		<hr>
+		<div class="col-md-12 descricao"> <strong>Usuario: </strong><span ng-bind="dado.nome"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Nivel: </strong><span ng-bind="dado.nivel"></span> </div>
+		<div> <button ng-click="deletar(dado._id)"><i class="fa fa-trash"></i></button></div>
+	
+	</div>
+		
+		
+
+	</div>
+</div>
+

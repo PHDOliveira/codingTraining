@@ -1,0 +1,40 @@
+
+<h1><span ng-bind="operacao"></span> Exercício</h1>
+
+
+
+
+<div class="form-group">
+<label for="titulo">Titulo</label>
+	<input type="text" class="form-control" id="titulo" ng-model="obj.titulo">
+</div>
+
+<div class="form-group">
+<label for="descricao">Descricao</label>
+	
+	<textarea class="form-control" id="descricao" name="descricao" ng-model="obj.descricao"  cols="30" rows="10"></textarea>
+</div>
+
+<div class="form-group">
+<label for="dicas">Dicas</label>
+	<textarea class="form-control" name="dicas" ng-model="obj.dicas" id="dicas"  cols="30" rows="10"></textarea>
+</div>
+
+
+<div class="form-group">
+<label for="dicas">Avaliador</label>
+	<textarea class="form-control" name="avaliador" ng-model="obj.avaliador" id="avaliador"  cols="30" rows="10"></textarea>
+</div>
+
+<div class="form-group">
+<label for="valorInicial">Valor Inicial</label>
+	<textarea class="form-control" name="valorInicial" ng-model="obj.valorInicial" id="valorInicial"  cols="30" rows="10"></textarea>
+</div>
+
+<div class="form-group" ng-if="operacao == 'Atualizar'">
+<label for="nivelDificuldade">Nível Dificuldade</label>
+	<input type="text" class="form-control" id="nivelDificuldade" ng-model="obj.nivelDificuldade">
+</div>
+
+
+<button ng-click="enviar()" class="btn btn-succes"> {{operacao}} </button>

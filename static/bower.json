@@ -1,0 +1,20 @@
+{
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.0",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "numeral": "^2.0.6",
+    "bootstrap": "^3.3.7",
+    "scriptjs": "^2.5.8",
+    "angular-permission": "^5.2.2",
+    "angular-ui-router": "^0.4.2"
+    
+  }
+}

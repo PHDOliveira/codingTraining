@@ -1,0 +1,102 @@
+<!-- Menu -->
+<header>
+<!-- 	<nav  class="navbar navbar-default navbar-fixed-top barra-topo">
+		<div id="navbar" class="navbar-collapse collapse">
+
+			<ul class="nav navbar-nav">
+				<li class="logo" ui-sref="app.home">
+					<a href="#"><h3> Treinamento JS</h3></a>
+					<span class="beta">Beta</span>
+				</li>
+				<li ng-if="logado" >
+					<a href="#" class="roll-link link-topo active"	data-title="Programas" ui-sref="app.exercicios">Listar
+					</a>
+				</li>
+				<li ng-if="!logado" >
+					<a href="#" class="roll-link link-topo" data-title="Listar Respostas" ui-sref="app.register">Registrar-se</a>
+				</li>
+
+
+				<li ng-if="controlsMenu" >
+					<a href="#" class="roll-link link-topo" data-title="Novo" ui-sref="app.inserirExercicios">Novo</a>
+				</li>
+				<li ng-if="controlsMenu">
+					<a href="#" class="roll-link link-topo" data-title="Listar Respostas" ui-sref="app.listarRespostas">Listar Respostas</a>
+				</li>
+
+			</ul>
+			<ul class="alinhar-direita nav navbar-nav">
+
+
+				<li ng-if="!logado" ui-sref="app.login"> Logar</li>
+
+				<li ng-if="logado" ui-sref="app.exercicios" ><i class="fa fa-user fa-lg" aria-hidden="true"></i> <span ng-bind="usuario.login"></span> </li>
+				<li ng-if="logado" ng-click="logout()"> Logout</li>
+			</ul>
+		</div>
+	</nav> -->
+
+	<nav class="navbar navbar-default barra-nova">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo-novo" href="#">Coding Training <span class="beta">Beta</span></a>
+				
+
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+					<li ng-if="logado" >
+						<a href="#" class="roll-link link-topo active"	data-title="Programas" ui-sref="app.exercicios">Listar
+						</a>
+					</li>
+					<li ng-if="!logado" >
+						<a href="#" class="roll-link link-topo" data-title="Listar Respostas" ui-sref="app.register">Registrar-se</a>
+					</li>
+
+
+					<li ng-if="controlsMenu" >
+						<a href="#" class="roll-link link-topo" data-title="Novo" ui-sref="app.inserirExercicios">Novo</a>
+					</li>
+
+					<li ng-if="controlsMenu || isAvaliador">
+						<a href="#" class="roll-link link-topo" data-title="Listar Respostas" ui-sref="app.listarRespostas">Listar Respostas</a>
+					</li>
+				</ul>
+					 <ul class="nav navbar-nav navbar-right">
+
+					<li ng-if="!logado" >
+					 <a href="#" class="roll-link link-topo" data-title="Logar" ui-sref="app.login">Logar</a>
+					 </li>
+
+
+
+					
+
+
+					<li ng-if="logado" >
+					 <a href="#" class="roll-link link-topo" data-title="Logout" ng-click="logout()"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Logout</a>
+					</li>
+
+					
+
+
+
+				</ul>
+
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+</header>
+

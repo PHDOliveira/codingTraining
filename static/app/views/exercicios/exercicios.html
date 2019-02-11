@@ -1,0 +1,47 @@
+
+<div class="row">
+<h1>Lista de Questões</h1>
+
+<div ng-if="controls" > <button class="btn-novo" ui-sref="app.inserirExercicios"><i class="fa fa-plus"></i> Novo</button></div>
+
+<div>
+	<div>Escolha um exercício abaixo para resolver.</div>
+<!-- 	<span>As cores, na frente de cada título mostram a dificuldade da questão em relação à sua habilidade.</span> -->
+	<div class="legenda">
+		<div class="caption-legenda">
+			
+			<span class="ball adequado" ></span>
+			<span>É o mais adequado para você resolver!</span>
+		</div>
+		<div class="caption-legenda">
+			
+			<span class="ball dificil" ></span>
+			<span>Este será um pouco mais difícil, mas você consegue!</span>
+		</div>
+		<div class="caption-legenda">
+			
+			<span class="ball facil" ></span>
+			<span>Esse já será muito fácil para você!</span>
+		</div>
+	</div>
+</div>
+
+
+<div class="col-md-12 dado"  ng-repeat="dado in dados">
+		<div class="col-md-10 titulo"  ui-sref="app.responder({dadosExercicio: dado})"> 
+		<span class="ball" ng-class="dado.classeProb"></span>
+		<i ng-if="dado.respondido" class="fa fa-check fa-sm check" aria-hidden="true"></i>
+		<span ng-bind="dado.titulo"></span>
+		 </div>
+		<div class="col-md-1 btn-editar" ng-if="controls"> <button ui-sref="app.inserirExercicios({dadoAtualizar: dado})"><i class="fa fa-edit"></i></button></div>
+		<div class="col-md-1 btn-deletar" ng-if="controls"> <button ng-click="deletar(dado._id)"><i class="fa fa-trash"></i></button></div>
+
+		<div class="col-md-12 descricao"> <strong>Descrição: </strong><span ng-bind="dado.descricao"></span> </div>
+		<div class="col-md-12 dicas"> <strong>Dicas: </strong><span ng-bind="dado.dicas"></span> </div>
+		<!-- <div class="col-md-12 dicas"> <strong>Nivel: </strong><span ng-bind="dado.nivelDificuldade"></span> </div> -->
+		<!-- <div class="col-md-12 dicas"> <strong>Prob: </strong><span ng-bind="dado.prob"></span> </div> -->
+		
+
+	</div>
+</div>
+

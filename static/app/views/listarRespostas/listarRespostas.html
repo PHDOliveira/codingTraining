@@ -1,0 +1,208 @@
+
+<div class="row">
+	
+	
+	
+
+<!-- 	<div class="col-md-12 dado" ng-repeat="item in questoesValidas">
+		<div class="col-md-12 descricao"> <strong>Questão </strong><span ng-bind="item.nome"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Tempo </strong><span ng-bind="item.tempo"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Quantidade de tentativas </strong><span ng-bind="item.tentativas"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Quantidade de Respostas corretas </strong><span ng-bind="item.quantidade"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Media de tempo </strong><span ng-bind="item.mediaTempo"></span> </div>
+
+		
+	</div> -->
+	<div >
+		<h1>Gráfico de Questões</h1>
+		<button ng-click="toggleGraficoQuestao()"> Mostrar/Esconder </button>
+		<div ng-show="graficoQuestao" id="container">Placeholder for chart</div>
+	</div>
+	<div >
+		<h1>Gráfico de Usuários</h1>
+		<button ng-click="toggleGraficoUsuario()"> Mostrar/Esconder </button>
+		<div ng-show="graficoUsuario" id="container2">Placeholder for chart</div>
+	</div>
+
+	<!-- <button type="button" class="btn btn-info btn-lg" >Open Modal</button> -->
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<div 	 id="container3">Placeholder for chart</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- <table class="table table-striped table-bordered">
+		<tr>
+			
+			<th>MEa</th>
+			<th>MPtm</th>
+			<th>Mpf</th>
+			<th>Mtempo</th>
+			<th>Mtent</th>
+			<th>Nresp</th>
+			<th>NCinc</th>
+		</tr>
+		<tr>
+			<td>Média da pontuação esperada</td>
+			<td>Média da pontuação de medidas</td>
+			<td>Média da pontuação final</td>
+			<td>Média de tempo</td>
+			<td>Média tentativas</td>
+			<td>Número de respostas</td>
+			<td>Número de ciclos incompletos</td>
+		</tr>
+	</table> -->
+
+	<div class="col-md-12 dado">
+		<div class="conteiner-tabela">
+			<span class="titulo-dados">Questões</span>
+			<span>
+				<form class="form-inline md-form form-sm">
+					<i class="fa fa-search" aria-hidden="true"></i>
+					<input class="form-control form-control-sm ml-3 w-75" ng-model="filtraQuestao.titulo" type="text" placeholder="Buscar por título" aria-label="Search">
+				</form>	
+			</span>
+
+			
+		</div>
+
+		<table class="table table-striped table-bordered">
+			<tr>
+				<th  class="first" title="Título da Questão">Título</th>
+				<th title="Nível de dificuldade da questão">Nvl Dif.</th>
+				<th class="colunaMedia" title="Média dos pontos esperados e Desvio Padrão">MEa</th>
+				<th class="colunaMedia" title="Média da pontuação de medidas e Desvio Padrão">MPtm</th>
+				<th class="colunaMedia" title="Média da pontuação final e Desvio Padrão">Mpf</th>
+				<th class="colunaMedia" title="Média do tempo e Desvio Padrão">Mtempo</th>
+				<th class="colunaMedia" title="Média de tentativas e Desvio Padrão">Mtent</th>
+				<th title="Quantidade de respostas">Nresp</th>
+				<th title="Quantidade de ciclos interrompidos">NCinc</th>
+			</tr>
+
+
+			<tr ng-repeat="item in dadosQuestoes  | filter:filtraQuestao">
+				<td class="first" data-toggle="modal" title="Abrir Gráfico" data-target="#myModal" ng-click="abrirGraficoUnitario(item)" ng-bind="item.titulo"></td>
+				<td ng-bind="item.nivel | number:2"></td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaEa | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpEa | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaPm | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpPm | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaPontuacaoFinal | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpPf | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaTempo | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpTempo | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.Mediatentativas | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpTent | number:2"></span> ) </span> </td>
+
+				<td ng-bind="item.respostas"></td>
+				<td ng-bind="item.ciclosIncompletos"></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+
+	<div class="col-md-12 dado">
+		<div class="conteiner-tabela">
+			<span class="titulo-dados">Usuários</span>
+
+		</div>
+		
+		<table class="table table-striped table-bordered">
+			<tr >
+				<th class="first" title="Id do usuário">Id do Usuario</th>
+				<th title="Nível do usuário">NvlUser</th>
+				<th class="colunaMedia" title="Média dos pontos esperados e Desvio Padrão">MEa</th>
+				<th class="colunaMedia" title="Média da pontuação de medidas e Desvio Padrão">MPtm</th>
+				<th class="colunaMedia" title="Média da pontuação final e Desvio Padrão">Mpf</th>
+				<th class="colunaMedia" title="Média do tempo e Desvio Padrão">Mtempo</th>
+				<th class="colunaMedia" title="Média de tentativas e Desvio Padrão">Mtent</th>
+				<th title="Quantidade de respostas">Nresp</th>
+				<th title="Quantidade de ciclos interrompidos">NCinc</th>
+			</tr>
+
+
+			<tr ng-repeat="item in dadosUsuarios track by $index">
+				<td class="first" data-toggle="modal" title="Abrir Gráfico" data-target="#myModal" ng-click="abrirGraficoUnitario(item)" ng-bind="item.idUsuario"></td>
+				<td ng-bind="item.nivelUser | number:2"></td>
+
+				<td class="colunaMedia"> <span ng-bind="item.mediaEa | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpEa | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaPm | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpPm | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaPontuacaoFinal | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpPf | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.mediaTempo | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpTempo | number:2"></span> ) </span> </td>
+				<td class="colunaMedia"> <span ng-bind="item.Mediatentativas | number:2"></span> <span class="desvPad"> (<span   ng-bind="item.dpTent | number:2"></span> ) </span> </td>
+
+				<td ng-bind="item.respostas"></td>
+				<td ng-bind="item.ciclosIncompletos"></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	
+	<!-- <div class="col-md-12 dado" ng-repeat="item in usuariosValidos">
+		<div class="col-md-12 descricao"> <strong>Usuario </strong><span ng-bind="item.nome"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Tempo </strong><span ng-bind="item.tempo"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Quantidade de tentativas </strong><span ng-bind="item.tentativas"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Quantidade de questões Respondidas </strong><span ng-bind="item.quantidade"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Media de tempo </strong><span ng-bind="item.mediaTempo"></span> </div>
+	</div> -->
+	<h1>Listas de respostas dos usuários </h1>
+	<span> <button ng-click="toggleRespostas()">Mostrar/Esconder</button> </span>
+	<div  class="col-md-12 dado" ng-show="mostrarRespostas && dado.resposta" ng-repeat="dado in dados track by $index">
+		<hr>
+		<button ng-click=deletar(dado._id)> Apagar</button>
+		<div class="col-md-12 descricao"> <strong>Usuario: </strong><span ng-bind="dado.idUsuario"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Exercicio: </strong><span ng-bind="dado.idExercicio"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Resposta postada: </strong><span ng-bind="dado.resposta"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Tempo: </strong><span ng-bind="dado.tempo"></span>s </div>
+		<div class="col-md-12 descricao"> <strong>Número de tentativas: </strong><span ng-bind="dado.tentativas"></span> </div>
+		<!-- <div class="col-md-12 descricao"> <strong>Erros cometidos: </strong><span ng-bind="dado.listaErros"></span> </div> -->
+		<div class="col-md-12 descricao"> <strong>dataInicial: </strong><span ng-bind="formatarData(dado.dataInicial)"></span> </div>
+		<!-- <div class="col-md-12 descricao"> <strong>dataFinal: </strong><span ng-bind="formatarData(dado.dataFinal)"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Ea: </strong><span ng-bind="dado.Ea"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Pt:</strong><span ng-bind="dado.Pt"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Ps: </strong><span ng-bind="dado.Ps"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Pm: </strong><span ng-bind="dado.Pm"></span> </div> -->
+		<div class="col-md-12 descricao"> <strong>pontuacaoFinal: </strong><span ng-bind="dado.pontuacaoFinal"></span> </div>
+		
+		
+
+	</div>
+
+	<h1>Listas de Tentativas dos usuários</h1>
+	<span> <button ng-click="toggleTentativas()">Mostrar/Esconder</button> </span>
+	<div  class="col-md-12 dado" ng-if="mostrarTentativas" ng-repeat="dado in tentativas track by $index">
+		<hr>
+		<!-- <button ng-click=deletar(dado._id)> Apagar</button> -->
+		<div class="col-md-12 descricao"> <strong>Usuario: </strong><span ng-bind="dado.idUsuario"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Exercicio: </strong><span ng-bind="dado.idExercicio"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Resposta postada: </strong><span ng-bind="dado.resposta"></span> </div>
+		<div class="col-md-12 descricao"> <strong>Tempo: </strong><span ng-bind="dado.tempo"></span>s </div>
+		<!-- <div class="col-md-12 descricao"> <strong>Número de tentativas: </strong><span ng-bind="dado.tentativas"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Erros cometidos: </strong><span ng-bind="dado.listaErros"></span> </div> -->
+		<div class="col-md-12 descricao"> <strong>dataInicial: </strong><span ng-bind="formatarData(dado.dataInicial)"></span> </div>
+		<!-- <div class="col-md-12 descricao"> <strong>dataFinal: </strong><span ng-bind="formatarData(dado.dataFinal)"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Ea: </strong><span ng-bind="dado.Ea"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Pt:</strong><span ng-bind="dado.Pt"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Ps: </strong><span ng-bind="dado.Ps"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>Pm: </strong><span ng-bind="dado.Pm"></span> </div> -->
+		<!-- <div class="col-md-12 descricao"> <strong>pontuacaoFinal: </strong><span ng-bind="dado.pontuacaoFinal"></span> </div> -->
+		
+		
+
+	</div>
+
+</div>
+
